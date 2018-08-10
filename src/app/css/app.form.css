@@ -1,0 +1,67 @@
+.astroLabels {
+  color: white;
+  font-weight: none;
+}
+#astroForm {
+  margin-top: 2rem;
+}
+
+#astroCalculate {
+  border-radius: 8px;
+  position: absolute;
+}
+.checkForm {
+  position: relative;
+  padding: 0;
+  top: 15px;
+}
+
+#formCheck {
+  margin-right: 1rem;
+}
+
+#astroOutput {
+  color: black;
+  background-color: lightgrey;
+  font-size: cover;
+  border-radius: 8px;
+  font-weight: bold;
+  border: solid 1px grey;
+  padding: 30px;
+  margin-top: 40px;
+  text-align: center;
+  height: 100px;
+}
+.topRow {
+  height: 20%;
+}
+.middleRow {
+  height: 80%;
+}
+@media only screen and (max-width: 768px) {
+  .formContainer {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (-webkit-min-device-pixel-ratio:1), (min--moz-device-pixel-ratio: 1) {
+  #astroHeader {
+    position: absolute;
+    color: white;
+    text-align: left;
+    border-bottom: 3px solid white;
+    margin-bottom: 2em;
+    margin-top: 1rem;
+    width: 98%;
+    bottom: 0;
+  }
+  .formContainer {
+    height: 100vh;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi),
+only screen and (min--moz-device-pixel-ratio:2) {
+  .formContainer {
+    height: 100%;
+  }
+}

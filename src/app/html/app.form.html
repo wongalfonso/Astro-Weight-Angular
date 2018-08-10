@@ -1,0 +1,60 @@
+<div class="container formContainer">
+  <div class="row topRow">
+    <div class="col-12">
+      <h1 id = 'astroHeader'>Astro Weight Calculator</h1>
+    </div>
+  </div>
+
+  <form id = 'astroForm' class = 'middleRow'>
+    <div class="form-row align-items-center">
+      <div class="form-group col-lg-3 col-sm-12">
+        <label for="inputWeight" class='astroLabels'>
+          Enter Your Weight
+        </label>
+        <input class='form-control' type='text' placeholder='Weight(lbs)' id='inputWeight' pattern='^([1-9]+)([0-9]*)(\.[0-9]{0,2})?$' #weight/>
+      </div>
+
+      <div class="form-group col-lg-3 col-sm-12">
+        <label class='astroLabels'>
+          Select A Planet
+        </label>
+        <select class='form-control' #selectedPlanets>
+          <option 
+            *ngFor = 'let planet of planets' 
+            
+            [value]= 'planet'>{{ planet[0] }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group checkGroup col-lg-3 col-sm-12">
+        <div class="form-check checkForm">
+          <input 
+            type = 'checkbox'
+            class = 'checkBox'
+            id = 'formCheck'
+            #pluto
+            (change) = 'removePluto(pluto)'
+            />
+          <label
+            class = 'astroLabels'
+            for = 'formCheck'
+            *ngIf = 'labelMessage'>
+            {{ labelMessage }}
+          </label>
+        </div>
+      </div>
+      <div class="form-group col-lg-3 col-sm-12">
+        <button
+          class = 'btn btn-primary form-control'
+          type = 'submit'
+          id = 'astroCalculate'
+          (click) = 'onClick($event, weight.value,  selectedPlanets.value)'> Calculate
+        </button>
+      </div>
+      <div class="form-group col-lg-12" id = 'astroOutput' *ngIf='message'>
+        {{ message }}
+      </div>
+    </div>
+  </form>
+</div>
